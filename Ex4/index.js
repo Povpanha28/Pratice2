@@ -1,25 +1,33 @@
-function hide(element) {
-    element.style.display = "none";
+function tryAgain() {
+    document.getElementById('passwordView').style.display = 'block';
+    document.getElementById('lostView').style.display = 'none';
+    document.getElementById('wonView').style.display = 'none';
+    document.getElementById('passwordInput').value = '';
 }
 
+let count = 3;
 
-// Display a given element
-
-function show(element) {
-    element.style.display = "block";
-} 
-
-const password = document.getElementById("passwordInput");
-const checkbtn = document.getElementById("checkButton");
-
-checkbtn.addEventListener("click", function() {
-    if (password.value == 'TheSecret'){
-        show(document.getElementById("wonView"));
-        hide(document.getElementById("lostView"));
+function comparePassword() {
+    const x = document.getElementById('passwordInput').value;
+    const password = '123';
+    if (x == password) {
+        //show won view
+        document.getElementById('wonView').style.display = 'block';
+        document.getElementById('passwordView').style.display = 'none';
     }
-    else { 
-        show(document.getElementById("lostView"));
-        hide(document.getElementById("wonView"));
+    else {
+        document.getElementById('lostView').style.display = 'block';
+        document.getElementById('passwordView').style.display = 'none';
+        document.getElementById('tryAgainButton').addEventListener('click', tryAgain);
+        count--;
+        document.getElementById('instructionLabel').innerHTML = `Enter your code (You can try ${count} times only !)`;
+        if (count == 0) {
+            document.getElementById('tryAgainButton').remove();
+        }
+
     }
-    hide(document.getElementById("passwordView"));
-});
+};
+
+
+
+document.getElementById('checkButton').addEventListener('click', comparePassword);
