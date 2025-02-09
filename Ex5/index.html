@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MANAGE TASKS</title>
+    <script src="app.js" defer></script>
+</head>
+
+<body>
+    <div id="toinput">
+        <label for="">Task : </label>
+        <input type="text" id="taskInput" placeholder="Enter a task" />
+        <br>
+        <label for="">Priority</label>
+        <select name="" id="prioritySelect">
+            <option value="1">high</option>
+            <option value="0">low</option>
+        </select>
+        <br>
+        <button id="addTask">Add task</button>
+        <br>
+        <button id="high">Show only important task</button>
+        <br>
+        <button id="low">Show only not important task</button>
+        <br>
+        <button id="all">Show all task</button>
+        <br>
+    </div>
+
+    <div id="displayTask"></div>
+</body>
+
+</html>
