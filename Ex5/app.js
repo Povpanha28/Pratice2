@@ -8,10 +8,7 @@ const lowbtn = document.getElementById('low');
 
 
 let tasks = [
-    {
-        description: '',
-        priority: 0,
-    },];
+    ];
     addTaskBtn.addEventListener('click', function () {
         const newTask = {
             description: taskInput.value,
@@ -27,6 +24,7 @@ let tasks = [
             const taskDiv = document.createElement('div');
             taskDiv.innerHTML = `<h3>${task.description}</h3>`;
             taskDiv.style.backgroundColor = task.priority === 1 ? 'red' : 'gray';
+            taskDiv.classList.add('box');
             displayTask.appendChild(taskDiv);
         });
         taskInput.value = ''; // Clear input
@@ -39,6 +37,7 @@ allbtn.addEventListener('click', function () {
         const newDiv = document.createElement('div');
         newDiv.innerHTML = `<h3>${task.description}</h3>`;
         newDiv.style.backgroundColor = task.priority === 1 ? 'red' : 'gray';
+        newDiv.classList.add('box');
         displayTask.appendChild(newDiv);
     });
 });
@@ -50,6 +49,7 @@ highbtn.addEventListener('click', function () {
             const newDiv = document.createElement('div');
             newDiv.innerHTML = `<h3>${task.description}</h3>`;
             newDiv.style.backgroundColor = task.priority === 1 ? 'red' : 'gray';
+            newDiv.classList.add('box');
             displayTask.appendChild(newDiv);
         }
     });
@@ -62,6 +62,7 @@ lowbtn.addEventListener('click', function () {
             const newDiv = document.createElement('div');
             newDiv.innerHTML = `<h3>${task.description}</h3>`;
             newDiv.style.backgroundColor = task.priority === 1 ? 'red' : 'gray';
+            newDiv.classList.add('box');
             displayTask.appendChild(newDiv);
         }
     });

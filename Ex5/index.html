@@ -6,30 +6,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MANAGE TASKS</title>
     <script src="app.js" defer></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
 </head>
 
 <body>
-    <div id="toinput">
-        <label for="">Task : </label>
-        <input type="text" id="taskInput" placeholder="Enter a task" />
-        <br>
-        <label for="">Priority</label>
-        <select name="" id="prioritySelect">
-            <option value="1">high</option>
-            <option value="0">low</option>
-        </select>
-        <br>
-        <button id="addTask">Add task</button>
-        <br>
-        <button id="high">Show only important task</button>
-        <br>
-        <button id="low">Show only not important task</button>
-        <br>
-        <button id="all">Show all task</button>
-        <br>
+    <div class="container" style="margin-top: 20px ;margin-bottom: 20px;">
+        <div class="card">
+            <header class="card-header">
+                <p class="card-header-title ">Task Management</p>
+            </header>
+            <div class="card-content">
+                <div class="content">
+                    <label for="">Task : </label>
+                    <input class="input is-info" id="taskInput" type="text" placeholder="Enter a task" />
+                    <br>
+                    <div class="select is-link" style="margin-top: 15px;">
+                        <select id="prioritySelect">
+                            <option value="1">High</option>
+                            <option value="0">Low</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <footer class="card-footer">
+                <button id="addTask" class="card-footer-item">Add task</button>
+                <button id="high" class="card-footer-item">Show only important task</button>
+                <button id="low" class="card-footer-item">Show only not important task</button>
+                <button id="all" class="card-footer-item">Show all task</button>
+            </footer>
+        </div>
     </div>
 
-    <div id="displayTask"></div>
+    <div class="container">
+        <div id="displayTask"></div>
+    </div>
 </body>
 
 </html>
